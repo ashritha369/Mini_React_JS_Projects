@@ -1,0 +1,184 @@
+[
+    {
+      "title": "CROWNS",
+      "items": [
+        {
+          "id": 1,
+          "name": "Dark Sapphire Blue Crown",
+          "imageUrl": "https://i.ibb.co/g6KzgZK/crown-dark-sapphire-blue.jpg",
+          "price": 25
+        },
+        {
+          "id": 2,
+          "name": "Green Crown",
+          "imageUrl": "https://i.ibb.co/VjW76CT/crown-green.jpg",
+          "price": 18
+        },
+        {
+          "id": 3,
+          "name": "Sky Blue Crown",
+          "imageUrl": "https://i.ibb.co/gj55kKd/crown-sky-blue.jpg",
+          "price": 35
+        },
+        {
+          "id": 4,
+          "name": "Sapphire Blue Crown",
+          "imageUrl": "https://i.ibb.co/QmZVFpr/crown-sapphire-blue.jpg",
+          "price": 25
+        },
+        {
+          "id": 5,
+          "name": "Pink Crown",
+          "imageUrl": "https://i.ibb.co/94yVb2B/crown-pink.jpg",
+          "price": 18
+        },
+        {
+          "id": 6,
+          "name": "Navy Blue Crown",
+          "imageUrl": "https://i.ibb.co/1ZwnYxS/crown-navy-blue.jpg",
+          "price": 14
+        },
+        {
+          "id": 7,
+          "name": "Purple Crown",
+          "imageUrl": "https://i.ibb.co/Qmf9DQy/crown-purple.jpg",
+          "price": 18
+        },
+        {
+          "id": 8,
+          "name": "Yellow Crown",
+          "imageUrl": "https://i.ibb.co/nzm4c1V/crown-yellow.jpg",
+          "price": 14
+        }
+      ]
+    },
+    {
+      "title": "DRESSES",
+      "items": [
+        {
+          "id": 9,
+          "name": "Dark Sapphire Blue Dress",
+          "imageUrl": "https://i.ibb.co/5vjJx0T/dress-dark-sapphire-blue.jpg",
+          "price": 25
+        },
+        {
+          "id": 10,
+          "name": "Green Dress",
+          "imageUrl": "https://i.ibb.co/YBsLV7m/dress-green.jpg",
+          "price": 18
+        },
+        {
+          "id": 11,
+          "name": "Sky Blue Dress",
+          "imageUrl": "https://i.ibb.co/sw9dVgM/dress-sky-blue.jpg",
+          "price": 35
+        },
+        {
+          "id": 12,
+          "name": "Sapphire Blue Dress",
+          "imageUrl": "https://i.ibb.co/7VwcBbL/dress-sapphire-blue.jpg",
+          "price": 25
+        },
+        {
+          "id": 13,
+          "name": "Pink Dress",
+          "imageUrl": "https://i.ibb.co/Dwfvkw4/dress-pink.jpg",
+          "price": 18
+        },
+        {
+          "id": 14,
+          "name": "Navy Blue Dress",
+          "imageUrl": "https://i.ibb.co/HzKmz6L/dress-navy-blue.jpg",
+          "price": 14
+        },
+        {
+          "id": 15,
+          "name": "Purple Dress",
+          "imageUrl": "https://i.ibb.co/LvMpWcg/dress-purple.jpg",
+          "price": 18
+        },
+        {
+          "id": 16,
+          "name": "Yellow Dress",
+          "imageUrl": "https://i.ibb.co/GcM3Z6W/dress-yellow.jpg",
+          "price": 14
+        }
+      ]
+    },
+    {
+      "title": "CROWNS+DRESSES",
+      "items": [
+        {
+          "id": 17,
+          "name": "Dark Sapphire Blue Crown with Dress",
+          "imageUrl": "https://i.ibb.co/FsLZQhJ/crown-with-dress-dark-sapphire-blue.jpg",
+          "price": 25
+        },
+        {
+          "id": 18,
+          "name": "Green Crown with Dress",
+          "imageUrl": "https://i.ibb.co/JxsrhW4/crown-with-dress-green.jpg",
+          "price": 18
+        },
+        {
+          "id": 19,
+          "name": "Sky Blue Crown with Dress",
+          "imageUrl": "https://i.ibb.co/VLqvrK3/crown-with-dress-sky-blue.jpg",
+          "price": 35
+        },
+        {
+          "id": 20,
+          "name": "Sapphire Blue Crown with Dress",
+          "imageUrl": "https://i.ibb.co/qRnn8dY/crown-with-dress-sapphire-blue.jpg",
+          "price": 25
+        },
+        {
+          "id": 21,
+          "name": "Pink Crown with Dress",
+          "imageUrl": "https://i.ibb.co/Gkp4swT/crown-with-dress-pink.jpg",
+          "price": 18
+        },
+        {
+          "id": 22,
+          "name": "Navy Blue Crown with Dress",
+          "imageUrl": "https://i.ibb.co/g4kJp6r/crown-with-dress-navy-blue.jpg",
+          "price": 14
+        },
+        {
+          "id": 23,
+          "name": "Purple Crown with Dress",
+          "imageUrl": "https://i.ibb.co/yqpXPmn/crown-with-dress-purple.jpg",
+          "price": 18
+        },
+        {
+          "id": 24,
+          "name": "Yellow Crown with Dress",
+          "imageUrl": "https://i.ibb.co/47snhph/crown-with-dress-yellow.jpg",
+          "price": 14
+        }
+      ]
+    },
+    {
+      "title": "VARMALAS",
+      "items": [
+        {
+          "id": 25,
+          "name": "Beads With Kasu Coin Varmala",
+          "imageUrl": "https://i.ibb.co/RbSMJGb/varmala-beads-with-kasu-coin.jpg",
+          "price": 25
+        },
+        {
+          "id": 26,
+          "name": "Long Beads Varmala",
+          "imageUrl": "https://i.ibb.co/ZfzWNCG/varmala-long-beads.jpg",
+          "price": 18
+        },
+        {
+          "id": 27,
+          "name": "Long Bead With Large Varmala",
+          "imageUrl": "https://i.ibb.co/k3WpJQF/varmala-long-bead-with-large.jpg",
+          "price": 35
+        }  
+]
+}]
+  
