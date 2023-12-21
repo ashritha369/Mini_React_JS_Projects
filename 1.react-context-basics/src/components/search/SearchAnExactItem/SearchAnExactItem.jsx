@@ -1,7 +1,7 @@
 import {  useState } from "react";
-import jsondata from "../../jsondata.json";
+import jsondata from "../../../jsondata.json";
 
-const SearchAnItem = () => {
+const SearchAnExactItem = () => {
   const [inputValue, setInputValue] = useState("");
   const [searchedItem, setSearchedItem] = useState("");
   const arrayOfTitles = [];
@@ -23,7 +23,9 @@ const SearchAnItem = () => {
 
   return (
     <div className="searchAnItem-container">
-      <input
+{/* CASE 1: EXACT SEARCHED ITEM WITH SAME CASE ALPHABETS */}
+     <div className="case1">
+     <input
         className="input-bar"
         value={inputValue}
         onChange={onEnterValueHandler}
@@ -37,7 +39,10 @@ const SearchAnItem = () => {
           return <div key={item.title}>{item.title}</div>;
         })}
       </div>
+     </div>
+   
+      
     </div>
   );
 };
-export default SearchAnItem;
+export default SearchAnExactItem;
