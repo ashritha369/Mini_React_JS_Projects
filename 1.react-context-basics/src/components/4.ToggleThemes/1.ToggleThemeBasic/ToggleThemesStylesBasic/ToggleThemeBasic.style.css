@@ -1,0 +1,8 @@
+.ToggleThemeHomePageLight{
+    background-color: antiquewhite;
+    color: purple;
+}
+.ToggleThemeHomePageDark{
+    background-color: purple;
+    color: white;
+}
