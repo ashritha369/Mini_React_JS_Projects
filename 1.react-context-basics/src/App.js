@@ -9,6 +9,11 @@ import SearchAnExactItem from "./components/2.search/SearchAnExactItem/SearchAnE
 import SearchRelatableItemAndCaseInsensitive from "./components/2.search/SearchRelatableItemAndCaseInsensitive/SearchRelatableItemAndCaseInsensitive";
 //3 TOGGLE THEMES
 import ToggleThemeBasic from "./components/4.ToggleThemes/1.ToggleThemeBasic/ToggleThemesComponentsBasic/ToggleThemeBasic.component";
+import ToggleThemeAdvanced from "./components/4.ToggleThemes/2.ToggleThemeAdvanced/ToggleThemesComponentsAdvanced/ToggleThemeAdvanced.component";
+//4 PAYMENT COMPONENT
+import ProceedToPayment from "./components/5.PaymentWithRazorpay/ProceedToPaymentWithRazorpay";
+// 5 TIC-TAC TOE
+import TicTacToe from "./components/6.Tic-tac-toe/tic-tac-toe.component";
 
 function App() {
   return (
@@ -20,8 +25,13 @@ function App() {
         <Route path="/searchrelateableitem" element={<SearchRelatableItemAndCaseInsensitive />}></Route>
         {/* 3 TOGGLE THEMES */}
         <Route path="/togglethemebasic" element={<ToggleThemeBasic />}></Route>
-
+        <Route path="/togglethemeadvanced" element={<ToggleThemeAdvanced />}></Route>
+        {/* 4 PAYMENT COMPONENT */}
+        <Route path="/proceedtopayment" element={<ProceedToPayment/>}></Route>
+         {/* 5 TIC TAC TOE */}
+         <Route path='/tictactoe' element={<TicTacToe/>}></Route>
       </Routes>
+    
    
   );
 }
