@@ -8,46 +8,43 @@ function App() {
   const handleInputValue = (event) => {
     const value = event.target.value;
     setInputUnits(value);
-
-
   };
 
-  const handleIncrease = () => {
-    // Convert inputUnits to a number or treat it as 0 if it's an empty string
-    const unitsToAdd = inputUnits === "" ? 0 : parseFloat(inputUnits);
+  const handleOperation = (operation) => {
+
+    const unitsToAddOrSubtract = inputUnits === "" ? 0 : parseFloat(inputUnits);
 
     if (inputUnits === "0") {
       // Alert user that they can't increase when currentValue is 0
       alert(
-        "Cannot increase when entered value is 0.As any value increased with 0 seems the value it self"
+        "Cannot increase/decrease when entered value is 0.As any value increased with 0 seems the value it self"
       );
       return;
     }
-    let value = currentValue + unitsToAdd;
-    if (!isNaN(value)) {
-      setCurrentValue(value);
-    } else {
-      alert("Invalid input for increase");
-    }
-  };
 
-  const handleDecrease = () => {
-    // Convert inputUnits to a number or treat it as 0 if it's an empty string
-    const unitsToSubtract = inputUnits === "" ? 0 : parseFloat(inputUnits);
-    if (inputUnits === "0") {
-      // Alert user that they can't increase when currentValue is 0
-      alert(
-        "Cannot increase when entered value is 0. As any value decreased with 0 seems the value it self"
-      );
-      return;
+    // IF ELSE CONDITION
+    let value;
+    if (operation === "increase") {
+      value = currentValue + unitsToAddOrSubtract;
+    } else if (operation === "decrease") {
+      value = currentValue - unitsToAddOrSubtract;
     }
-    let value = currentValue - unitsToSubtract;
+    // /////////////////////
     if (!isNaN(value)) {
       setCurrentValue(value);
     } else {
       alert("Invalid input for decrease");
     }
   };
+
+  const handleIncrease = () => {
+    handleOperation("increase");
+  };
+
+  const handleDecrease = () => {
+    handleOperation("decrease");
+  };
+
   const handleReset = () => {
     setInputUnits("");
     setCurrentValue(0);
