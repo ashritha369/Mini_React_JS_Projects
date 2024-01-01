@@ -11,9 +11,7 @@ function App() {
   };
 
   const handleOperation = (operation) => {
-
     const unitsToAddOrSubtract = inputUnits === "" ? 0 : parseFloat(inputUnits);
-
     if (inputUnits === "0") {
       // Alert user that they can't increase when currentValue is 0
       alert(
@@ -21,7 +19,6 @@ function App() {
       );
       return;
     }
-
     // IF ELSE CONDITION
     let value;
     if (operation === "increase") {
@@ -29,7 +26,7 @@ function App() {
     } else if (operation === "decrease") {
       value = currentValue - unitsToAddOrSubtract;
     }
-    // /////////////////////
+    ///////////////////////
     if (!isNaN(value)) {
       setCurrentValue(value);
     } else {
