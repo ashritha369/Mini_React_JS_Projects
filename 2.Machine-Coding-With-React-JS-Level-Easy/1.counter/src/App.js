@@ -9,36 +9,7 @@ function App() {
     const value = event.target.value;
     setInputUnits(value);
 
-    // Use parseFloat to convert the input to a floating-point number
-    const number = parseFloat(value);
 
-    // Check if the number is NaN (Not a Number)
-    if (isNaN(number)) {
-      // Handle the error accordingly, you may clear the state or set an error flag
-      console.log("Invalid input");
-      return;
-    }
-
-    // Check if the number is positive, negative, or zero
-    if (number > 0) {
-      // Set state for positive number
-      console.log("Positive number:", number);
-    } else if (number < 0) {
-      // Set state for negative number
-      console.log("Negative number:", number);
-    } else {
-      // Set state for zero
-      console.log("Zero:", number);
-    }
-
-    // Check if the number is a float or an integer
-    if (Number.isInteger(number)) {
-      // Set state for integer
-      console.log("Integer:", number);
-    } else {
-      // Set state for float
-      console.log("Float:", number);
-    }
   };
 
   const handleIncrease = () => {
