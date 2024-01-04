@@ -1,0 +1,171 @@
+VIDEO 3:
+
+DISPLAYING LOGIC
+import { useEffect, useState } from "react";
+import "./App.css";
+import CartDropdown from "./components/CartDropdown/CartDropdown.Component";
+import ProductCard from "./components/ProductCard/ProductCard.component";
+
+const App = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const onlineData = await fetch("https://dummyjson.com/products");
+        const jsonData = await onlineData.json();
+        setData(jsonData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  let titlevalues = [];
+  if (data && data.products) {
+    titlevalues = data.products.map((item) => item.title);
+  }
+  let EachTitleToCart = "";
+  let handleAddToCart = (title) => {
+    EachTitleToCart = title;
+    return EachTitleToCart;
+  };
+  return (
+    <div className="App">
+      <h1 style={{ color: "orangered" }}>Add to Cart Functionality</h1>
+      <h2 style={{ color: "purple" }}>Cart Icon Display</h2>
+      <button>Cart Icon</button>
+      <h2 style={{ color: "purple" }}> Cart Drop Down Display</h2>
+      <CartDropdown TitleEach={EachTitleToCart} />
+
+      <h2 style={{ color: "green" }}>Products Display</h2>
+
+      {data && data.products ? (
+        data.products.map((item) => (
+          <ProductCard
+            key={item.id}
+            handleItemAddClick={() => handleAddToCart(item.title)}
+            displayEachTitle={item.title}
+          />
+        ))
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+};
+
+export default App;
+
+
+
+ACCORDING TO ME: because
+let EachTitleCart='cracki'
+console.log(EachTitleCart);
+
+EachTitleCart='frontend';
+console.log(EachTitleCart);
+
+atleast it should show one cart item, irrespective of other clocks for below one right? dont use state, BUT IT WON'T BECAUSE:
+
+In your provided code, the issue lies in how you're managing the EachTitleToCart variable. In React, directly modifying a variable like this won't trigger a re-render. React relies on state changes to detect when it needs to re-render components. Therefore, your approach of updating EachTitleToCart won't cause the component to reflect the changes.
+
+To achieve what you want without using state, you can make the CartDropdown component more dynamic by directly rendering the title passed as a prop. Here's a modified version of your code:
+
+
+import { useEffect, useState } from "react";
+import "./App.css";
+import CartDropdown from "./components/CartDropdown/CartDropdown.Component";
+import ProductCard from "./components/ProductCard/ProductCard.component";
+
+const App = () => {
+  const [data, setData] = useState(null);
+  let lastAddedTitle = "";
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const onlineData = await fetch("https://dummyjson.com/products");
+        const jsonData = await onlineData.json();
+        setData(jsonData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div className="App">
+      <h1 style={{ color: "orangered" }}>Add to Cart Functionality</h1>
+      <h2 style={{ color: "purple" }}>Cart Icon Display</h2>
+      <button>Cart Icon</button>
+      <h2 style={{ color: "purple" }}> Cart Drop Down Display</h2>
+      {/* Directly pass the last added title to CartDropdown */}
+      <CartDropdown TitleEach={lastAddedTitle} />
+
+      <h2 style={{ color: "green" }}>Products Display</h2>
+
+      {data && data.products ? (
+        data.products.map((item) => (
+          <ProductCard
+            key={item.id}
+            handleItemAddClick={() => {
+              lastAddedTitle = item.title;
+              console.log(lastAddedTitle); // Log the last added title
+            }}
+            displayEachTitle={item.title}
+          />
+        ))
+      ) : (
+        <p>Loading...</p>
+      )}
+    </div>
+  );
+};
+
+export default App;
+
+import "./ProductCard.styles.css";
+const ProductCard = (props) => {
+  console.log(props);
+
+  return (
+    <div className="single-product-container">
+      <h1>{props.displayEachTitle}</h1>
+      {/* <button>Remove</button> */}
+      <button onClick={props.handleItemAddClick}>Add to Cart</button>
+    </div>
+  );
+};
+export default ProductCard;
+
+import CartItem from "../CartItems/CartItem.component";
+import "./CartDropdown.Styles.css";
+
+const CartDropdown = ({ TitleEach }) => {
+  return (
+    <div className="cart-dropdown-container">
+      Cart Dropdown Here
+      <CartItem title={TitleEach} />
+    </div>
+  );
+};
+export default CartDropdown;
+import "./CartItem.styles.css";
+const CartItem = ({ title }) => {
+  return <div className="each-cart-item-container"> {title}</div>;
+};
+export default CartItem;
+
+
+
+While it's technically possible to update values without using useState, it is not a recommended approach. React uses a virtual DOM and a reconciliation process to efficiently update the actual DOM, and it relies on the state mechanism to track changes and trigger re-renders.
+
+In the example you provided earlier, where you manually updated a variable (lastAddedTitle), React was not aware of this change, and that's why the UI didn't reflect the updated value. Using state (useState) is the preferred and more reliable way to manage component state in React.
+
+React components re-render when their state or props change. By using useState, you ensure that React is aware of changes in your data and can efficiently manage the rendering process. The virtual DOM diffing algorithm compares the previous and current states, then updates only the parts of the DOM that need to change.
+
+While it's possible to achieve certain things without using useState, doing so might lead to unexpected behavior, make the code harder to reason about, and could result in performance issues. Using React's state management features is generally the recommended and more predictable approach.

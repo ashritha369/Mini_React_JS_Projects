@@ -1,0 +1,6 @@
+.single-product-container {
+  background-color: rgb(255, 228, 255);
+  margin: 5px auto;
+  border-radius: 5px;
+  width: fit-content;
+}
