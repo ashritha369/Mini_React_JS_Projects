@@ -39,6 +39,11 @@ const App = () => {
             handleItemAddClick={() => {
               setcartItems([...cartItems, item.title]);
             }}
+            handleRemoveClick={() => {
+              setcartItems(
+                cartItems.filter((cartItem) => cartItem !== item.title)
+              );
+            }}
             displayEachTitle={item.title}
           />
         ))
