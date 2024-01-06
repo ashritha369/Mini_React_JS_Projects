@@ -1,17 +1,25 @@
+import React from "react";
 import CartItem from "../CartItems/CartItem.component";
 import "./CartDropdown.Styles.css";
 
-const CartDropdown = ({ cartArrayItems }) => {
+const CartDropdown = (props) => {
   return (
     <div className="cart-dropdown-container">
       Cart Dropdown Here
-      {cartArrayItems &&
-        cartArrayItems.map((eachItem) => {
-          return <CartItem title={eachItem} />;
-        })}
-      {/* <CartItem title={value} />
-      <CartItem title={value} /> */}
+      {props.cartItems &&
+        props.cartItems.map((eachItem) => (
+          <CartItem
+            key={eachItem} // Add a unique key for each CartItem
+            title={eachItem}
+            handleRemoveFromCartItem={() => {
+              props.setcartItems((prevItems) =>
+                prevItems.filter((cartItem) => cartItem !== eachItem)
+              );
+            }}
+          />
+        ))}
     </div>
   );
 };
+
 export default CartDropdown;

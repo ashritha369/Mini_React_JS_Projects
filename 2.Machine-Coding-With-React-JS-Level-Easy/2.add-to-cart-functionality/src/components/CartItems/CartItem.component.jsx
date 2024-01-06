@@ -1,5 +1,10 @@
 import "./CartItem.styles.css";
-const CartItem = ({ title }) => {
-  return <div className="each-cart-item-container"> {title}</div>;
+const CartItem = (props) => {
+  return (
+    <div className="each-cart-item-container">
+      {props.title}
+      <button onClick={props.handleRemoveFromCartItem}>X</button>
+    </div>
+  );
 };
 export default CartItem;

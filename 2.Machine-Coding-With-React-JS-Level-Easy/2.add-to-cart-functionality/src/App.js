@@ -28,7 +28,7 @@ const App = () => {
       <button>Cart Icon</button>
       <h2 style={{ color: "purple" }}> Cart Drop Down Display</h2>
       {/* Directly pass the last added title to CartDropdown */}
-      <CartDropdown cartArrayItems={cartItems} />
+      <CartDropdown cartItems={cartItems} setcartItems={setcartItems} />
 
       <h2 style={{ color: "green" }}>Products Display</h2>
 
@@ -36,6 +36,7 @@ const App = () => {
         data.products.map((item) => (
           <ProductCard
             key={item.id}
+            title={item.title}
             handleItemAddClick={() => {
               setcartItems([...cartItems, item.title]);
             }}
