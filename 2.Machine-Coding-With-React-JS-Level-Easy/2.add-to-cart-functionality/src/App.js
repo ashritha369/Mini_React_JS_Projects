@@ -6,6 +6,7 @@ import ProductCard from "./components/ProductCard/ProductCard.component";
 const App = () => {
   const [data, setData] = useState(null);
   const [cartItems, setcartItems] = useState([]);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,14 +22,20 @@ const App = () => {
     fetchData();
   }, []);
 
+  let handleToggleDropwdown = () => {
+    setToggleDropdown(!toggleDropdown);
+  };
+
   return (
     <div className="App">
       <h1 style={{ color: "orangered" }}>Add to Cart Functionality</h1>
       <h2 style={{ color: "purple" }}>Cart Icon Display</h2>
-      <button>Cart Icon</button>
+      <button onClick={handleToggleDropwdown}>Cart Icon</button>
       <h2 style={{ color: "purple" }}> Cart Drop Down Display</h2>
       {/* Directly pass the last added title to CartDropdown */}
-      <CartDropdown cartItems={cartItems} setcartItems={setcartItems} />
+      {toggleDropdown && (
+        <CartDropdown cartItems={cartItems} setcartItems={setcartItems} />
+      )}
 
       <h2 style={{ color: "green" }}>Products Display</h2>
 
